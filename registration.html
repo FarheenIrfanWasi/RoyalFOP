@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
+		<link rel="stylesheet" href="css/layout.css" type="text/css" media="all">
+		<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+		
+
+
+
+<title>registration</title>
+</head>
+<body >
+	<style type="text/css">
+	label {
+	margin-top:10px;
+    color:#000d33;	
+	font-weight: bold;
+	font-size: 15px;
+	font-family:Lucida Sans Unicode;
+}
+body{
+background-color: #000d33;
+}
+form{
+ font-weight: bold;
+background-color:white;
+}
+.background {
+box-sizing: border-box;
+width: 80%;
+height: 100px;
+padding: 3px;
+background-image: ;
+border: 1px solid black;
+background-size: 100% 100%;
+}
+
+    .textbox{
+	margin-top:10px;
+    size="20px";
+    float: left; width: 150px;
+	padding:3px;
+    }
+ label{
+    float: left; width: 150px;
+	margin:5px;
+}
+input[type=submit] {
+
+font-size: 20px; 
+font-weight: bold;
+width: 150px ;
+color: #000d33;
+    background-color:white;
+    padding: 14px 20px;
+    margin: 8px 0;
+	margin-left:4px;
+    border-radius: 4px;
+    cursor: pointer;
+	border:5px solid #806600;
+	
+}
+</style>
+<!-- header -->
+			
+
+
+<center><fieldset style="width:50%;margin:50px; border:3px solid #806600;">
+<legend style= "width: 200; font-size: 45px; font-weight: bold; color:#806600 ;">Create An Account!</legend>
+<form class="caa" action="pro.php" method ="POST">
+<img src="images/userlogo.png" style = "float:right; width:300px;height:300px;margin:50px;" alt="" class="img-responsive" >
+<label>Username </label> <input name="name" type="text" Name="name" class="textbox"  required>
+ <br>
+ <br>
+<label> Password </label> <input type="password" type="text" name="password" class="textbox" required>
+<br>
+<br>
+<label>Re-Enter Password</label> <input type="Password"  name="confirm" class="textbox" required>
+<br>
+ <br>
+ 
+<label>Email Address </label> <input Email="Email" type="text"  name="email" class="textbox" required>
+<br>
+<br>
+<label> Designation</label> <input  type="text" Name="designation"  class="textbox" required>
+<br>
+<br>
+<label>Department </label><input  type="text" Name="department"  class="textbox" required>
+<br>
+<br>
+<label for="phonenum"  id="error" > Phone Number</label> <input type="tel" pattern="^\d{3}-\d{4}-\d{3}$" name="contact" class="textbox" >
+  
+<br>
+<br>
+<label>User Role </label>
+<select  class="textbox" name= "role">
+  <option value="select">select a role</option>
+  <option value="admin">admin</option>
+  <option value="operator">operator</option>
+  <option value="option">viewer</option>
+</select>
+<br>
+<br>
+<label>Station </label> 
+<select  class="textbox" name= "station">
+  <option value="station">select a station</option>
+  <option value="khi">Karachi</option>
+  <option value="isb">Islamabad</option>
+  <option value="quetta">Quetta</option>
+</select>
+<br>
+<br>
+<input type="submit" name="Submit" value="Register"></div></div>
+</form>
+</fieldset>
+</center>
+</body>
+
+
+</html>
