@@ -20,7 +20,7 @@ error_reporting(1);
 			   $hash=$row['password'];
                if ($row['username'] == $username && password_verify($password,$hash)) {
                	echo "login successfull as " .$row['username'];
-				header("Location: registration.html");
+				header("Location: newtempelate/index.html");
                }else{
                	echo "failed to login";
                }
