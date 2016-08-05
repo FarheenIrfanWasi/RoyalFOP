@@ -1,6 +1,3 @@
-<?php
-include('session.php');
-?>
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -98,6 +95,15 @@ margin-top:8px;
 margin-left:20px;
 margin-right:20px;
 	}
+	#Type{
+	color: #FFF;
+font-weight: bold;
+display: inline-block;
+width: 150px;
+margin-top:8px;
+margin-left:20px;
+margin-right:20px;
+	}
 	.radiolabel{
 	color: #FFF;
 	}
@@ -105,11 +111,6 @@ margin-right:20px;
     width: 20%;
     margin: 4px;
     display: inline-block;	
-}
-input[type=number]{
-    width: 10%;
-    margin: 4px 0;
-    display: inline-block;
 }
 input[type=button], input[type=submit], input[type=reset] {
     background-color: #4682B4;
@@ -119,6 +120,11 @@ input[type=button], input[type=submit], input[type=reset] {
     text-decoration: none;
     margin: 4px 2px;
     cursor: pointer;
+}
+input[type=number]{
+    width: 10%;
+    margin: 4px 0;
+    display: inline-block;
 }
 </style>
 </head>
@@ -134,18 +140,19 @@ input[type=button], input[type=submit], input[type=reset] {
 							<img src="images/ras-badge.png">
 					  
 					</div>
-						<b id="logout" style="float:right;font-size:20px;"><a style= "color: white;" href="../logout.php">Log Out</a></b>
+					
 					<nav id="main-nav" class="8u">
 						<ul>
-							<li><a class="active" href="admin.html" style="font-weight:bold;">Home</a></li>
+							<li><a class="active" href="index.html" style="font-weight:bold;">Home</a></li>
 							<li><a href="index.html" style="font-weight:bold;" ></a></li>
 							<li><a href="index.html" style="font-weight:bold" > A Page</a></li>
 							<li><a href="index.html" style="font-weight:bold" >Another Page</a></li>							
 							<li>
 								<a href="" style="font-weight:bold">Update Data</a>			
 									<ul>
-										<li><a href="qatardeparture.html">Scheduled Flights</a></li>
-										<li><a href="non-schdle.html">Non-scheduled Flights</a></li>
+										<li><a href="index.html">Etihad Airlines</a></li>
+										<li><a href="qatardeparture.html">Qatar Airways</a></li>
+										<li><a href="index.html">Saudi Airlines</a></li>
 									</ul>
 							</li>
 							<li><a href="index.html" style="font-weight:bold">Contact</a></li>
@@ -168,91 +175,46 @@ input[type=button], input[type=submit], input[type=reset] {
 						</div>
 						<div class="depart">
 						<fieldset>
-<legend><h2 class="font">Flight Departure</h2></legend>
-<form action="depart.php" method ="POST">
-<label  class="label">Date</label><input type="text" name="date"  id="date" style="margin-left:3px;"class="textbox"/><br>
-<label class="label">Air Craft Registration</label> <input name="ac-reg"  class="textbox" type="text" ><br>
-<label class="label">Flight Number</label> <input name="flight-num"  class="textbox" type="text"  > <br>
-<label class="label">Type Of Air Craft</label> <input name="ac-type"  class="textbox" type="text"><br>
-<label class="label">Sch Time Of Departure</label><input name="std" style="margin-left:3px;" class="datetimepicker_mask"  type="text" ><br>
-<label class="label">Act Time Of Departure</label> <input id="aTD" style="margin-left:0px;"class="datetimepicker_mask" name="atd" type="text"><br>
-<label class="label">Flight:</label> <input class="radiobtn" name="isearly" type="Radio" value="is Early" checked><label class="radiolabel">Is Early</label>
-			                  <input class="radiobtn" name="isdelay" type="Radio" value="Is Delay" ><label class="radiolabel">Is Delay</label>
-                              <input class="radiobtn" name="onime" type="Radio" value="On Time" ><label class="radiolabel">On Time</label>
-                              <input class="radiobtn" name="isdelayras" type="Radio" value="Is Delay RAS"><label class="radiolabel">Is Delay RAS </label> <br>    
-<label class="label">Ground Time Saved</label> <input name="grnd" type="number"  class="textbox"><br>
-<label class="label">Remarks</label> <input name="grnd-remarks" type="text"  class="textbox"><br>
-<label class="label"> PAX Buss </label>
-        <input id="qty1" value="0" size="2px" name="pax-bus" type="number"/>
+<legend><h2 class="font">Non Schedule Flight/Chartered</h2></legend>
+<form>
+<label  class="label">DATE</label><input type="text"  id="date" style="margin-left:3px;"class="textbox"/><br>
+<label class="label">AIR CRAFT REGISTRATION:</label> <input name="Flight Number"  class="textbox" type="text" ><br>
+<label class="label">FLIGHT NUMBER</label> <input name="Flight Number"  class="textbox" type="text"  > <br>
+<label class="label">TYPE OF AIRCRAFT</label> <input name="toa"  class="textbox" type="text"  > <br>
+
+<label class="label">ATA</label><input name="Flight Number" style="margin-left:3px;" class="datetimepicker_mask"  type="text" ><br>
+<label class="label">ATD</label> <input id="aTD" style="margin-left:0px;"class="datetimepicker_mask" name="Flight Number" type="text"><br>
+ <label class="label">OPERATOR</label> <input name="opa" type="text"  class="textbox"><br>
+<label class="label">REMARKS</label> <input name="Flight Number" type="text"  class="textbox"><br>
+<label class="label"> ARR PAX </label>
+        <input id="qty1" value="0" size="2px" type="number"/>
         <button type="button" id="down" onclick="decreseQty('qty1')" >-</button>
         <button id="up" type="button" onclick="increseQty('qty1')">+</button><br>
-<label class="label"> PAX Eco </label>
-        <input id="qty2" value="0" size="2px" name="pax-eco" type="number"/>
+<label class="label"> DEP PAX </label>
+        <input id="qty2" value="0" size="2px" type="number"/>
         <button type="button" id="down" onclick="decreseQty('qty2')" >-</button>
         <button id="up" type="button" onclick="increseQty('qty2')">+</button><br>
-<label class="label"> Infant </label>
-        <input id="qty3" value="0" size="2px" name="infant"type="number"/>
-        <button  type="button" id="down" onclick="decreseQty('qty3')" >-</button>
-        <button id="up" type="button" onclick="increseQty('qty3')">+</button><br>
-<label class="label"> Wheelchair </label>
-        <input id="qty4" value="0" size="2px" name="wheelchair" type="number"/>
-        <button type="button" id="down" onclick="decreseQty('qty4')" >-</button>
-        <button id="up" type="button" onclick="increseQty('qty4')">+</button><br>
-<label class="label">Wheelchair remarks</label> <input name="wheelchair-remarks" type="text"  class="textbox"><br>
-<label class="label"> UM </label>
-        <input id="UM" value="0" size="2px" name="um" type="number"/>
-        <button type="button" id="down" onclick="decreseQty('UM')" >-</button>
-        <button type="button" id="up" onclick="increseQty('UM')">+</button><br>
-<label class="label"> YP </label>
-        <input id="YP" value="0" size="2px" name="yp" type="number"/>
-        <button type="button" id="down" onclick="decreseQty('YP')" >-</button>
-        <button type="button" id="up" onclick="increseQty('YP')">+</button><br>
-<label class="label"> DEPU </label>
-        <input id="DEPU" value="0" size="2px" name="depu" type="number"/>
-        <button type="button" id="down" onclick="decreseQty('DEPU')" >-</button>
-        <button type="button" id="up" onclick="increseQty('DEPU')">+</button><br>
- <label class="label"> INAAD </label>
-        <input id="INAAD" value="0" size="2px" name= "inaad" type="number"/>
-        <button type="button" id="down" onclick="decreseQty('INAAD')" >-</button>
-        <button type="button" id="up" onclick="increseQty('INAAD')">+</button><br>
-<label class="label"> CARGO(dep) </label>
-        <input id="CARGO" value="0" size="2px" name="cargo" type="number"/>
+
+
+<label class="label"> ARRIVAL CARGO </label>
+        <input id="CARGO" value="0" size="2px" type="number"/>
         <button type="button" id="down" onclick="decreseQty('CARGO')" >-</button>
         <button type="button" id="up" onclick="increseQty('CARGO')">+</button><br>
-<label class="label"> MAIL </label>
-        <input id="MAIL" value="0" size="2px" name="mail" type="number"/>
+<label class="label"> DEPARTURE CARGO  </label>
+        <input id="MAIL" value="0" size="2px" type="number"/>
         <button type="button" id="down" onclick="decreseQty('MAIL')" >-</button>
         <button type="button" id="up" onclick="increseQty('MAIL')">+</button><br>
-<label class="label">HIRE IN</label> <input name="hire-in" type="text" class= "textbox"  class="textbox"> <br>
-<label class="label">Remarks</label> <input name="remarks" type="text" class= "textbox"  class="textbox"><br><br>
+<label class="label">SECTOR</label> <input name="Flight Number" type="text" class= "textbox"  class="textbox"> <br>
+<label class="label">REMARKS</label> <input name="Flight Number" type="text" class= "textbox"  class="textbox"><br><br>
 <center>
-<input type="submit" value="Submit" id="sub"> <br><br></center>
+<input type="submit" value="SUBMIT" id="sub"> <br><br></center>
 </form>
 </fieldset>
 						</div>
 									
 					</section>
 					
-					<section class="4u">
-						<div id="sidebar">
-								<h3>Update</h3>
-								<ul>
-									<li><a href="arrival_ap.html">Arrival</a></li>
-									<li><a href="qatardeparture.html">Departure</a></li>
-									<li><a href="baggage.html">Baggage</a></li>
-								</ul>
-							</section>
-							<section class="12u">
-								<h3>More Useful Links</h3>
-								<ul>
-									<li><a href="#">First Link</a></li>
-									<li><a href="#">Another Link</a></li>
-									<li><a href="#">And Another</a></li>
-									<li><a href="#">Last One</a></li>
-								</ul>
-							</section>
-						</div>
-					</section>			
+							
 
 				</div>
 			</div>

@@ -20,8 +20,10 @@ error_reporting(1);
 			   $hash=$row['password'];
                if ($row['username'] == $username && password_verify($password,$hash)) {
                	echo "login successfull as " .$row['username'];
+				if($row['username']== 'admin'){
 				header("Location: newtempelate/index.html");
-               }else{
+               }}
+			   else{
                	echo "failed to login";
                }
 ?>

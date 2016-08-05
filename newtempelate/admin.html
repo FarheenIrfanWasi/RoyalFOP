@@ -1,3 +1,6 @@
+<?php
+include('session.php');
+?>
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -77,18 +80,18 @@
 							<img src="images/ras-badge.png">
 					  
 					</div>
-					
+					<b id="logout" style="float:right;font-size:20px;"><a style= "color: white;" href="../logout.php">Log Out</a></b>
 					<nav id="main-nav" class="8u">
 						<ul>
-							<li><a class="active" href="index.html" style="font-weight:bold;">Home</a></li>
+							<li><a class="active" href="admin.html" style="font-weight:bold;">Home</a></li>
 							<li><a href="index.html" style="font-weight:bold;" ></a></li>
 							<li><a href="index.html" style="font-weight:bold" > A Page</a></li>						
 							<li>
 								<a href="" style="font-weight:bold">Update Data</a>			
 									<ul>
-										<li><a href="index.html">Etihad Airlines</a></li>
-										<li><a href="qatardeparture.html">Qatar Airways</a></li>
-										<li><a href="index.html">Saudi Airlines</a></li>
+										<li><a href="qatardeparture.html">Scheduled Flights</a></li>
+										<li><a href="non-schdle.html">Non-scheduled Flights</a></li>
+										
 									</ul>
 							</li>
 							<li><a href="registration.html" style="font-weight:bold" >Add User</a></li>	
@@ -111,12 +114,7 @@
 							<a href="#"><img src="images/qatar.jpg" alt="banner image" /></a>
 						</div>
 						
-						<h1>Flight number <select  class="textbox" name= "station" style="margin: 3px;">
-  <option value="station">select flight number</option>
-  <option value="777">777</option>
-  <option value="474">474</option>
-  <option value="333">333</option>
-</select></h1>
+						<h1>ADMIN PANEL</h1>
 						<p>This simple, fixed width website template is released under a <a href="http://creativecommons.org/licenses/by/3.0">Creative Commons Attribution 3.0 Licence</a>. This means you are free to download and use it for personal and commercial projects. However, you <strong>must leave the 'design from css3templates.co.uk' link in the footer of the template</strong>.</p>
 						<p>This template is written entirely in <strong>HTML5</strong> and <strong>CSS3</strong>.</p>
 						<p>You can view more free CSS3 web templates <a href="http://www.css3templates.co.uk">here</a>.</p>
@@ -129,16 +127,7 @@
 							<li>Google Chrome 31</li>
 						</ul>						
 					</section>
-					
-					<section class="4u">
-						<div id="sidebar">
-								<h3>Update</h3>
-								<ul>
-									<li><a href="#">Arrival</a></li>
-									<li><a href="#">Departure</a></li>
-									<li><a href="#">Baggage</a></li>
-								</ul>
-							</section>
+	
 							<section class="12u">
 								<h3>More Useful Links</h3>
 								<ul>
