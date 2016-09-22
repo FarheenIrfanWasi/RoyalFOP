@@ -1,10 +1,11 @@
 <?php
+error_reporting(1);
 include('login1.php'); // Includes Login Script
 
-if(isset($_SESSION['login_user']) && $_SESSION['login_user']== 'admin' ){
+if(isset($_SESSION['login_userrole']) && $_SESSION['login_userrole']== 'ADMIN' ){
 header("Location: newtempelate/admin.html");
 }
-if(isset($_SESSION['login_user']) && $_SESSION['login_user']== 'operator3' ){
+if(isset($_SESSION['login_userrole']) && $_SESSION['login_userrole']== 'VIEWER' ){
 header("Location: indexhome.html");
 }
 ?>
@@ -23,17 +24,17 @@ header("Location: indexhome.html");
 <div id="form">
 <form action="" method="POST">
 <p>
-	<label>username</label>
+	<label style="font-weight:bold;margin-right:10px;">Username</label>
 
   <input type="text" id="user"  placeholder="username" name="username">
 </p>
 <p>
-	<label>password</label>
+	<label style="font-weight:bold;margin-right:11px;">Password</label>
 
   <input type="password" id="pass" placeholder="**********" name="password">
 </p>
 <p>
-<input type="submit" name="submit" id="btn" value="Login">
+<input type="submit" name="submit" id="btn" value="Login" style="width:100px;height:35px; margin-left:100px;" >
 	</p>
 	<span><?php echo $error; ?></span>
 </form>

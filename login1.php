@@ -1,4 +1,5 @@
 <?php
+error_reporting(1);
 session_start(); // Starting Session
 $error=''; // Variable To Store Error Message
 if (isset($_POST['submit'])) {
@@ -26,12 +27,14 @@ $row = mysql_fetch_array($query);
 if ($rows == 1) {
 	$hash=$row['password'];
 if (password_verify($password,$hash)) {
-	if($username == 'admin' ){
+	if($row['user_role'] == 'ADMIN'){
 $_SESSION['login_user']=$username; // Initializing Session
+$_SESSION['login_userrole'] = $row['user_role'];
 header("Location: newtempelate/admin.html"); // Redirecting To Other Page
 }
-else if($username == 'operator3'){
+else if($row['user_role'] == 'VIEWER'){
 $_SESSION['login_user']=$username; // Initializing Session
+$_SESSION['login_userrole'] = $row['user_role'];
 header("Location: indexhome.html");
 }
 }
