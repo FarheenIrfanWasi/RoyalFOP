@@ -1,0 +1,221 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<title> DAILY REPORT</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600|Source+Code+Pro" rel="stylesheet" />
+		<!--[if lte IE 8]><script src="html5shiv.js" type="text/javascript"></script><![endif]-->
+		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+		<script src="js/jquery.dropotron.min.js"></script>		
+		<link rel="stylesheet" type="text/css" href="datetimepicker/jquery.datetimepicker.css"/>
+	<script>
+function printContent(el){
+	var restorepage = document.body.innerHTML;
+	var printcontent = document.getElementById(el).innerHTML;
+	document.body.innerHTML = printcontent;
+	window.print();
+	document.body.innerHTML = restorepage;
+}
+</script>
+</script>
+		<script src="skel.min.js">
+		{
+			prefix: 'css/style',
+			preloadStyleSheets: true,
+			resetCSS: true,
+			boxModel: 'border',
+			grid: { gutters: 30 },
+			breakpoints: {
+				wide: { range: '1200-', containers: 1140, grid: { gutters: 50 } },
+				narrow: { range: '481-1199', containers: 960 },
+				mobile: { range: '-480', containers: 'fluid', lockViewport: true, grid: { collapse: true } }
+			}
+		}
+		</script>
+		<script>
+			$(function() {
+
+				// Note: make sure you call dropotron on the top level <ul>
+				$('#main-nav > ul').dropotron({ 
+					offsetY: -10 // Nudge up submenus by 10px to account for padding
+				});
+
+			});
+		</script>
+		<script>
+			// DOM ready
+			$(function() {
+    
+			// Create the dropdown base
+			$("<select />").appendTo("nav");
+   
+			// Create default option "Go to..."
+			$("<option />", {
+				"selected": "selected",
+				"value"   : "",
+				"text"    : "Menu"
+			}).appendTo("nav select");
+   
+			// Populate dropdown with menu items
+			$("nav a").each(function() {
+			var el = $(this);
+			$("<option />", {
+				"value"   : el.attr("href"),
+				"text"    : el.text()
+			}).appendTo("nav select");
+			});
+   
+			// To make dropdown actually work
+			// To make more unobtrusive: http://css-tricks.com/4064-unobtrusive-page-changer/
+			$("nav select").change(function() {
+				window.location = $(this).find("option:selected").val();
+			});
+  
+			});
+		</script>	
+		<style>
+		.table
+		{
+			border-collapse: collapse;
+	    }
+.table1 td {
+    background-color: #301878; 
+	color:white;
+	font-weight:bold;
+}
+.table th {
+font-weight:bold;
+	 background-color:#c0a860;
+}
+.table td{
+	background-color:white;
+	color:#301878; 
+	font-weight:bold;
+	
+}
+
+.label{
+	 width: 10%;
+	 
+    margin: 4px;
+    display: inline-block;
+	
+
+}
+
+label{
+	font-weight:bold;
+	margin:7px;
+	
+}
+ input[type=submit] {
+    background-color: #c0a860;
+    color: white;
+    padding: 5px 30px;
+    margin: 2px 2px;
+    cursor: pointer;
+	font-weight:bold;
+}
+ input[type=submit]:hover {
+	 color:  #301878; 
+ }
+  #heading1{
+	  margin-right:20px;
+color : #002db3;
+font-weight:bold;
+font-size:30px;
+ }
+  #heading2{
+	  margin-right:20px;
+	 color: black;
+	 font-weight:bold;
+	 font-size:15px;
+ }
+  #heading3{
+	  margin-right:20px;
+	 color: purple;
+	 font-weight:bold;
+	 font-size:15px;
+
+ }
+  #heading4{
+	 color: purple;
+	 font-weight:bold;
+	 font-size:15px;
+	 
+ }
+ 
+ 
+
+		</style>
+	</head>
+	<body>
+		<div id="header_container">		
+		    <div class="container">
+			<!-- Header -->
+				<div id="header" class="row">
+					<div class="4u">
+						<!--	<div class="transparent"><span>
+						<h1><a href="index.html">RFOP<span class="header_colour">_Admin</span></a></h1>
+							<h2>Excellence in Handeling!</h2>  </div>-->
+							<img src="images/ras-badge.png">
+					  
+					</div>
+					<b id="logout" style="float:right;font-size:20px;"><a style= "color: white;" href="../logout.php">Log Out</a></b>
+					<nav id="main-nav" class="8u">
+						<ul>
+							<li><a class="active" href="admin.html" style="font-weight:bold;">Home</a></li>
+							<li><a href="index.html" style="font-weight:bold;" ></a></li>
+							<li><a href="index.html" style="font-weight:bold" > A Page</a></li>						
+							<li>
+								<a href="update.html" style="font-weight:bold">Update Data</a>			
+							</li>
+							<li><a href="registration.html" style="font-weight:bold" >Add User</a></li>	
+							<li><a href="index.html" style="font-weight:bold">Contact</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>	
+        </div>		
+
+		<div id="site_content">
+			<div class="container">			
+			
+				<!-- Features -->	
+<section class="4u" style ="float:right;width:45px; margin-top:15px;">
+						
+							<section class="12u">
+							</section>
+</section>							
+				<div class="row" >									
+					<section class="8u">
+                <div style="margin:20px; margin-left:300px;">					
+				<center>	<h1> DAILY REPORT </h1> </center> </div>
+	<a href="dailyreport.php?airline=ETIHAD+AIRWAYS"><img src="images/etihadairways.jpg" height="150px" width ="150px"></a>		
+</section>					
+					</section>
+						</div>			
+				</div>
+			</div>	
+				
+			<div class="container">			
+			<!-- Footer -->
+				
+			</div>		
+	</body>
+
+ <script src="datetimepicker/build/jquery.datetimepicker.full.js"></script>
+<script>
+$('.date').datetimepicker({
+	//yearOffset:222,
+	lang:'ch',
+	timepicker:false,
+	mask: true,
+	format:'Y-m-d',
+	//formatDate:'Y/m/d',
+	//minDate:'-1970/01/02', // yesterday is minimum date
+	//maxDate:'+1970/01/02' // and tommorow is maximum date calendar
+})
+
+</script>
+</html>

@@ -1,18 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-	<title>Report</title>
-	<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-		<title>jQuery barChart Demo Page</title>
-		<link type="text/css" rel="stylesheet" href="style.css" />
-     <!--   <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css"> -->
-    <script   src="https://code.jquery.com/jquery-1.12.4.js"   integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="   crossorigin="anonymous"></script>
-    <script src="bar/script.js"></script>
-	</head>
-	
+	<title>DAILY REPORT</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600|Source+Code+Pro" rel="stylesheet" />
 		<!--[if lte IE 8]><script src="html5shiv.js" type="text/javascript"></script><![endif]-->
@@ -105,20 +94,6 @@ font-weight:bold;
 	
 }
 
-.label{
-	 width: 10%;
-	 
-    margin: 4px;
-    display: inline-block;
-	
-
-}
-
-label{
-	font-weight:bold;
-	margin:7px;
-	
-}
  input[type=submit] {
     background-color: #c0a860;
     color: white;
@@ -130,30 +105,11 @@ label{
  input[type=submit]:hover {
 	 color:  #301878; 
  }
-  #heading1{
-	  margin-right:20px;
-color : #002db3;
+ #label{
+margin-right:20px;
+color : white;
 font-weight:bold;
-font-size:30px;
- }
-  #heading2{
-	  margin-right:20px;
-	 color: black;
-	 font-weight:bold;
-	 font-size:15px;
- }
-  #heading3{
-	  margin-right:20px;
-	 color: purple;
-	 font-weight:bold;
-	 font-size:15px;
-
- }
-  #heading4{
-	 color: purple;
-	 font-weight:bold;
-	 font-size:15px;
-	 
+font-size:20px; 
  }
  
  
@@ -204,105 +160,91 @@ font-size:30px;
 <?php
 include('connect.php');
 error_reporting(1);
-$epr='';
-if(isset($_GET['epr']))
-	$epr=$_GET['epr'];
+$airline='';
+$arrdate='';
+if(isset($_GET['airline']))
+	$airline=$_GET['airline'];
+if(isset($_GET['arrdate']))
+	$arrdate=$_GET['arrdate'];
+echo "<div style='margin:20px; margin-left:300px;'> <center><h1> DAILY REPORT </h1></center>";	 
+if($airline=="ETIHAD AIRWAYS"){
+echo "<center><img src='images/etihadairways.jpg' height='150px' width ='300px'><center></div>";}
 ?>
+<div style="margin:20px; margin-left:300px;">
 
-<form method="post" action='monthlyreport.php?epr=search'>
- <table align='center' class="table1" width="150%">
-<tr> 
-<td><label>Airline Name </label> <select name="airlinename" style="width:150px;padding:2px;"> 
-<option value="QATAR AIRWAYS" >QATAR AIRWAYS</option>
-  <option value="ETIHAD AIRWAYS">ETIHAD AIRWAYS</option>
-  <option value="OMAN AIRLINE">OMAN AIRLINE</option>
-  <option value="GULF AIRLINE">GULF AIRLINE</option>
-  <option value="GULF AIRLINE">CARGOLUX</option>
-  <option value="NON-SCH">NON-SKD</option>
- <option value="ALL">ALL</option>
-</select>
-<label>Year</label><input type="text" style="width:90px;" name="search_year">
- <input type="submit" name="submit" value="Search" /> </td> <td></td> </tr>
-		   </form>
-		
-		   </table>
-<div id="jquery-script-menu">
-<div class="jquery-script-center">
-
-</head>
-<!--<div class="jquery-script-ads"><script type="text/javascript"><!--
-google_ad_client = "ca-pub-2783044520727903";
-/* jQuery_demo */
-google_ad_slot = "2780937993";
-google_ad_width = 728;
-google_ad_height = 90;
-//-->
-</script>
-<!--<script type="text/javascript"
-src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script></div>
-<div class="jquery-script-clear"></div>
+<form method="GET" action="dailyreport.php?">
+<center> <table align='center' class="table1" width="90%">
+ <tr> <td><input type="hidden" name="airline" value="<?php echo $airline ?>">
+<label id="label">DATE</label><input type="text" class="date" id="date" style="width:90px;" name="arrdate">
+<input type="submit" value="SHOW FLIGHTS" /> </td> </tr></table> </center>
 </div>
-</div>-->
-    <!--<h1 style="margin:150px auto 30px auto; text-align:center; color:#fff;"></h1>-->
-
 <?php
-if($epr=='search'){
-$searchairline=$_POST['airlinename'];
-$searchyear=$_POST['search_year'];
-
-		 echo "   <div id='row'>
-		<div style='border-bottom:1px solid #ccc;'>	<span id='heading1'>Airline : ".$searchairline." </span><br><span id= 'heading2'> Year: ".$searchyear." </span> </div>
+if($airline!="" && $arrdate!=""){
+ echo "   <div id='row'>
 <table align ='center' class ='table' border='1' cellspacing='0' cellpadding='0' width='150%' id='table' style='border-spacing:0px 5px; border-collapse: separate;'>
 <thead>
-<th>Month</th>
-<th>Total Flights</th>
-<th>Dly Due GHA</th>
-<th>OTP</th>
-</thead>";			 
-
-$query = "SELECT *,count(arr_flight_no) as flights, MONTHNAME(arr_flight_date) as month,(SELECT Count(*) FROM flight_performance WHERE dep_status = 'DELAY RAS' AND MONTHNAME(arr_flight_date) = month ) as delayras FROM flight_performance WHERE YEAR(arr_flight_date)='$searchyear'  GROUP BY MONTH(arr_flight_date) ";
-
-//echo $query;
+<th>Flight#</th>
+<th>A/C Reg#</th>
+<th>A/C type</th>
+<th>STA</th>
+<th>ATA</th>
+<th>STD</th>
+<th>ATD</th>
+<th>Status</th>
+<th>GTG</th>
+<th>GTS</th>
+</thead>";
+$query = "SELECT * FROM flight_performance WHERE airline_name ='$airline' and arr_flight_date='$arrdate'";
 $myquery=mysql_query($query);
-//echo $sql;
+$totalgroundtimesaved = 0;
+$totalgroundtimegiven=0;
+$totalflights = 0;
+$totalflightsearlyontime = 0;
+$totalflightsdelay = 0;
 $totalflightsdelayRAS = 0;
 $totalflights=0;
-$OTP =0;
 while ($row=mysql_fetch_array($myquery)){
 	echo "<tr>
-	<td>".$row['month']."</td>
-	<td>".$row['flights']."</td>
-	<td>".$row['delayras']."</td>";	
-			$totalflights = $row['flights'];
-			$totalflightsdelayRAS =  $row['delayras'];
-			$OTP =(($totalflights-$totalflightsdelayRAS)/$totalflights)*100;
-	echo "<td>".$OTP."</td>	</tr> ";
+	<td><a href='table.html?'>".$row['arr_flight_no']."</>
+	<td>".$row['aircraft_reg']."</td>
+	<td>".$row['aircraft_type']."</td>
+			<td>".$row['arr_schedule_time']."</td>
+			<td>".$row['arr_actual_time']."</td>
+			<td>".$row['dep_schedule_time']."</td>
+			<td>".$row['dep_actual_time']."</td>
+			<td>".$row['dep_status']."</td>
+			<td>".$row['ground_time_given']."</td>
+			<td>".$row['ground_time_saved']."</td></a>
+			</tr> ";
+if($row['dep_status'] == "EARLY" || $row['dep_status']=="On Time" ){
+				$totalflightsearlyontime++;
+			}
+			if($row['dep_status'] == "DELAY" ){
+				$totalflightsdelay++;
+			}
+			if($row['dep_status'] == "Delay RAS" ){
+				$totalflightsdelayRAS++;
+			}
+			$totalgroundtimegiven +=  $row['ground_time_given'];
+			$totalgroundtimesaved +=  $row['ground_time_saved'];
+			$totalflights++;
 }
-}?>
-    <div id="chart">
-      <ul id="numbers">
-        <li><span>100%</span></li>
-        <li><span>90%</span></li>
-        <li><span>80%</span></li>
-        <li><span>70%</span></li>
-        <li><span>60%</span></li>
-        <li><span>50%</span></li>
-        <li><span>40%</span></li>
-        <li><span>30%</span></li>
-        <li><span>20%</span></li>
-        <li><span>10%</span></li>
-        <li><span>0%</span></li>
-      </ul>
-      <ul id="bars">
-        <li><div data-percentage="56" class="bar"></div><span>Option 1</span></li>
-        <li><div data-percentage="33" class="bar"></div><span>Option 2</span></li>
-        <li><div data-percentage="54" class="bar"></div><span>Option 3</span></li>
-        <li><div data-percentage="94" class="bar"></div><span>Option 4</span></li>
-        <li><div data-percentage="44" class="bar"></div><span>Option 5</span></li>
-        <li><div data-percentage="23" class="bar"></div><span>Option 6</span></li>
-      </ul>
-    </div>
+$OTP =0;
+$GTSper=0;
+$GTSper=0;
+$GTSper=($totalgroundtimesaved/$totalgroundtimegiven)*100;
+$OTP =(($totalflights-$totalflightsdelayRAS)/$totalflights)*100;
+echo "</table><table class ='table' style='border-spacing:3px 0px; border-collapse: separate;' width='80%'> ";
+echo "<th colspan='4'> RESULT </th>";
+echo "<tr><td >Total flights taken </td><td style='color:black;'>" .$totalflights."</td>";
+echo "<td>Total GTG</td><td style='color:black;'> " . $totalgroundtimegiven."</td></tr>";
+echo "<tr><td>Total flights Early/On Time</td><td style='color:black;'> " .$totalflightsearlyontime."</td>";
+echo "<td>Total GTS </td><td style='color:black;'>".$totalgroundtimesaved."</td></tr>";
+echo "<tr><td>Total flights Delay</td><td style='color:black;'> " .$totalflightsdelay."</td>";
+echo "<td >OTP</td><td style='color:black;'> " .round($OTP)." %</td></tr>";
+echo "<tr><td>Total flights Delay RAS </td><td style='color:black;'> " .$totalflightsdelayRAS."</td>";
+echo "<td>GTS percentage</td><td style='color:black;'> ".round($GTSper )."%</td></tr>";
+echo "</table></div>";}?>
 </section>
 			
 					
@@ -325,24 +267,12 @@ $('.date').datetimepicker({
 	lang:'ch',
 	timepicker:false,
 	mask: true,
+	format:'Y-m-d',
+	value: new Date()
 	//formatDate:'Y/m/d',
 	//minDate:'-1970/01/02', // yesterday is minimum date
-	//maxDate:'+1970/01/02' // and tommorow is maximum date calendar
+	//maxDate:'+1970/01/02' // and tommorow is maximum date calendar'
 })
-
-</script>
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-36251023-1']);
-  _gaq.push(['_setDomainName', 'jqueryscript.net']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
 
 </script>
 </html>

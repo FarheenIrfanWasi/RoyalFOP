@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+<style>
+table, th, td {
+
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: center;
+}
+#label{
+margin-right: 50px;
+
+
+}
+</style>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>jQuery barChart Demo Page</title>
+		<link type="text/css" rel="stylesheet" href="style.css" />
+     <!--   <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css"> -->
+    <script   src="https://code.jquery.com/jquery-1.12.4.js"   integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="   crossorigin="anonymous"></script>
+    <script src="bar/script.js"></script>
+	</head>
+	<body><div id="jquery-script-menu">
+<div class="jquery-script-center">
+
+</head><center>
+<body>
+<label id="label">
+<h2>MONTHLY STATISTICAL REPORT</h2></label>
+
+<table align="center" style="width:50%" id="table">
+  
+  <tr>
+    <th>Year</th>
+    <th>Total Flts</th>
+	<th>Dly Due GHA</th>
+    <th>OTP</th>
+  </tr>
+  <tr>
+    <td>2007/08</td>
+    <td>443</td>
+	<td>3</td>
+	<td>99.32%</td>
+  </tr>
+ 
+</table></center>
+<!--<div class="jquery-script-ads"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-2783044520727903";
+/* jQuery_demo */
+google_ad_slot = "2780937993";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<!--<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+<div class="jquery-script-clear"></div>
+</div>
+</div>-->
+    <!--<h1 style="margin:150px auto 30px auto; text-align:center; color:#fff;"></h1>-->
+    <div id="chart">
+      <ul id="numbers">
+        <li><span>100%</span></li>
+        <li><span>90%</span></li>
+        <li><span>80%</span></li>
+        <li><span>70%</span></li>
+        <li><span>60%</span></li>
+        <li><span>50%</span></li>
+        <li><span>40%</span></li>
+        <li><span>30%</span></li>
+        <li><span>20%</span></li>
+        <li><span>10%</span></li>
+        <li><span>0%</span></li>
+      </ul>
+      <ul id="bars">
+        <li><div data-percentage="56" class="bar"></div><span>Option 1</span></li>
+        <li><div data-percentage="33" class="bar"></div><span>Option 2</span></li>
+        <li><div data-percentage="54" class="bar"></div><span>Option 3</span></li>
+        <li><div data-percentage="94" class="bar"></div><span>Option 4</span></li>
+        <li><div data-percentage="44" class="bar"></div><span>Option 5</span></li>
+        <li><div data-percentage="23" class="bar"></div><span>Option 6</span></li>
+      </ul>
+    </div>
+	</body><script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</html>

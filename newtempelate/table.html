@@ -1,0 +1,209 @@
+<html>
+	<head>
+	<style>
+	.label{
+color: black;
+font-weight: bold;
+display: inline-block;
+width: 150px;
+margin-top:8px;
+margin-left:20px;
+margin-right:20px;
+	}
+	img {
+    border-radius: 4px;
+    padding: 5px;
+	
+}
+#Type{
+	color: black;
+font-weight: bold;
+display: inline-block;
+width: 150px;
+margin-top:8px;
+margin-left:20px;
+margin-right:20px;}
+#label1{
+	color: black;
+font-weight: bold;
+display: inline-block;
+width: 150px;
+margin-top:8px;
+margin-left:8px;
+margin-right:15px;
+	}
+	.radiolabel{
+	color: #FFF;
+	}
+.textbox 
+    width: 20%;
+    margin left: 4px;
+    display: inline-block;	
+}
+ input[type=submit], input[type=reset] {
+    background-color: #4682B4;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+input[type=number]{
+    width: 10%;
+    margin: 4px 0;
+    display: inline-block;}
+button:disabled {
+background-color: #ebebe0;
+border-color:gray;
+color:gray;
+cursor:not-allowed;
+}
+button:disabled span{
+background-color: #ebebe0;
+border-color:gray;
+color:gray;
+cursor:not-allowed;
+}
+fieldset { 
+    display: block;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-top: 0.35em;
+    padding-bottom: 0.625em;
+    padding-left: 0.75em;
+    padding-right: 9.75em;
+    border: 8px groove (internal value);
+}
+	#lab{
+	margin-top:8px;
+margin-left:20px;
+margin-right:20px;
+	}
+	#da{
+		margin-top:800px;
+margin-left:550px;
+margin-right:2000px;
+	}
+	</style>
+
+<header id="header">
+
+					
+						<center><span class="avatar"><img src="form/images/Badge.png" height="100" width="150"</span>	</center>
+						<fieldset><legend align="center">
+						FLIGHT ARRIVAL</legend>
+			
+ <label id="Type">Airline </label>
+<input type="text" name="adate"  disabled style="margin-left:2px;">
+<label  class="label">Date</label><input type="text" name="adate" disabled style="margin-left:5px;" >
+<label class="label">Air Craft Registration</label> <input  name="a-ac-reg" disabled class="textbox validate" type="text" style="margin-left:8px;"><br>
+<center><label class="label">Flight status</label> <input class="radiobtn" name="aflightstatus"disabled type="Radio" value="Is Early" checked><label class="radiolabel">Is Early</label>
+			                  <input class="radiobtn "disabled name="aflightstatus" type="Radio" value="Is Delay" ><label class="radiolabel">Is Delay</label>
+                              <input class="radiobtn "disabled name="aflightstatus" type="Radio" value="On Time" ><label class="radiolabel">On Time</label> 
+                           <br></center>
+<label class="label">Air Craft Type</label> <input  name="ac-type-name" disabled type="text" style="margin-left:2px;">
+<label class="label">Flight Number</label> <input name="a-flight-num"disabled type="text" style="margin-left:2px;"> 
+ <label id="Type">Type of flight</label>
+<input type="text" name="adate"  disabled style="margin-left:6px;" ><label class="label">STA</label><input type="text"disabled name="asta" style="margin-left:5px;"/>
+<label class="label">ATA</label><input type="text"disabled name="aata" style="margin-left:7px;" class=" validate datetimepicker1"/>
+
+<label class="label">Remarks</label> <input name="astatus-remarks"disabled type="text"style="margin-left:6px;"  >
+
+<!--<label class="label">Ground Time Saved</label> <input name="agrnd" type="number"  class="textbox validate">min<br> -->
+<label class="label">Remarks</label> <input name="agrnd-remarks"disabled type="text"  class="textbox" style="margin-left:1px;">
+<label class="label"> Passenger (J) </label>
+      <input name="dstd"disabled style="margin-left:3px;"  type="text">
+<label class="label"> Passenger (Y) </label>
+       <input name="dstd"disabled style="margin-left:6px;"  type="text">
+<label class="label"> infant </label>
+        <input name="dstd"disabled style="margin-left:1px;"  type="text">
+<label class="label"> wheelchair </label>
+        <input name="dstd"disabled style="margin-left:3px;"  type="text">
+<label class="label">Wheelchair remarks</label> <input name="awheelchair-remarks"disabled type="text"style="margin-left:6px;"  class="textbox">
+
+<label class="label"> CARGO </label>
+       <input name="dstd"disabled style="margin-left:1px;"  type="text">
+<label class="label"> MAIL </label>
+     <input name="dstd"disabled style="margin-left:3px;"  type="text">
+
+<label class="label">Remarks</label><input name="aremarks"disabled type="text"  class= "textbox"  class="textbox" style="margin-left:10px;"><br><br>
+
+	</div></fieldset>
+						
+						<br>
+						<fieldset><legend align="center">
+						FLIGHT DEPARTURE </legend>
+<div class="depart" id="tabs-2">
+
+
+<label class="label">Sch Time Of Departure</label><input name="dstd"disabled style="margin-left:5px;"  type="text">
+<label class="label">Act Time Of Departure</label> <input name="datd"disabled id="atd" style="margin-left:0px;" class="datetimepicker_mask validate" type="text">
+<label class="label">Remarks</label> <input name="dgrnd-remarks"disabled type="text"  class="textbox"style="margin-left:5px;">
+<center><label id="lab" class="label">Flight status</label> <input class="radiobtn "disabled name="dflightstatus" type="Radio" value="is Early" checked><label class="radiolabel"disabled>Is Early</label>
+			                  <input class="radiobtn " name="dflightstatus"disabled type="Radio" value="Is Delay" ><label class="radiolabel">Is Delay</label>
+                              <input class="radiobtn " name="dflightstatus"disabled type="Radio" value="On Time" ><label class="radiolabel">On Time</label>
+                              <input class="radiobtn " name="dflightstatus"disabled type="Radio" value="Is Delay RAS"><label class="radiolabel">Is Delay RAS </label></center>
+<!--<label class="label">Ground Time Saved</label> <input name="dgrnd" type="number"  class="textbox validate"><br>-->
+
+<label class="label"> PAX Buss </label>
+       <input name="dstd"disabled style="margin-left:3px;"  type="text">
+<label class="label"> PAX Eco </label>
+       <input name="dstd"disabled style="margin-left:1px;"  type="text">
+<label class="label"> Infant </label>
+        <input name="dstd"disabled style="margin-left:3px;"  type="text">
+<label class="label"> Wheelchair </label>
+        <input name="dstd"disabled style="margin-left:3px;"  type="text">
+<label class="label">Wheelchair remarks</label> <input name="dwheelchair-remarks"disabled type="text" style="margin-left:1px;">
+<label class="label"> CARGO(dep) </label>
+        <input name="dstd"disabled style="margin-left:3px;"  type="text">
+<label class="label"> MAIL </label>
+        <input name="dstd"disabled style="margin-left:3px;"  type="text">
+<label class="label">HIRE IN</label> <input name="dhire-in"disabled type="text" class= "textbox validate" > 
+<label class="label">Remarks</label> <input name="dremarks"disabled type="text" class= "textbox"style="margin-left:5px;" >
+<label class="label"> UM </label>
+       <input name="dstd"disabled style="margin-left:3px;"  type="text">
+<label class="label"> YP </label>
+        <input name="dstd"disabled style="margin-left:1px;"  type="text">
+<label class="label"> DEPU </label>
+        <input name="dstd"disabled style="margin-left:3px;"  type="text">
+ <label class="label"> INAAD </label>
+        <input name="dstd"disabled style="margin-left:3px;"  type="text">
+<br>
+
+
+						</div>						</fieldset>
+						<br>
+						<fieldset><legend align="center">
+						BAGGAGE </legend>
+						<label  class="label">FIRST PIECE TIME</label><input name= "fp"disabled  type="text" style="margin-left:6px;"  />
+<label class="label">LAST PIECE TIME</label> <input type="text" name="lp"disabled style="margin-left:5px;"/>
+
+<label class="label">FOUND PROPERTY</label> <input name="property" disabled type="text"  class="textbox"style="margin-left:2px;">
+<label class="label">REMARKS</label> <input name="bremarks"style="margin-left:2px;" type="text"disabled  class="textbox">
+<label class="label"> FIM BUS </label>
+        <input name="dstd"disabled style="margin-left:5px;"  type="text">
+<label class="label"> MISSING </label>
+       <input name="dstd"disabled style="margin-left:3px;"  type="text">
+<label class="label"> AHL </label>
+        <input name="dstd"disabled style="margin-left:2px;"  type="text">
+<label class="label"> OHD</label>
+        <input name="dstd"disabled style="margin-left:3px;"  type="text">
+<label class="label"> RXT </label>
+        <input name="dstd"disabled style="margin-left:4px;"  type="text">
+
+<label class="label"> UM </label>
+        <input name="dstd"disabled style="margin-left:3px;"  type="text">
+<label class="label"> YP </label>
+      <input name="dstd"disabled style="margin-left:3px;"  type="text">
+<label class="label"> DEPU </label>
+       <input name="dstd"disabled style="margin-left:3px;"  type="text">
+ <label class="label"> O/C </label>
+        <input name="dstd"disabled style="margin-left:3px;"  type="text">
+<label class="label"> INAAD </label>
+        <input name="dstd"disabled style="margin-left:3px;"  type="text"><br><br>
+
+</fieldset>
+					
+						</head>
+						</html>
